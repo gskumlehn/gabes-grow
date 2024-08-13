@@ -44,10 +44,10 @@ jobs:
 
       - name: Check code style with pylint
         run: |
-          docker exec web-container pylint my_project
+          docker exec web-container pylint app
 
       - name: Run Django tests
         run: |
-          docker exec web-container python manage.py test
+          docker exec web-container python app/manage.py test
 
 
