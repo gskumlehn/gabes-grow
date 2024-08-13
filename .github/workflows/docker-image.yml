@@ -42,6 +42,10 @@ jobs:
         run: |
           docker run --name web-container -d -p 8888:8888 web
 
+      - name: Install dependencies
+        run: |
+          docker exec web-container pip install -r pylint
+
       - name: Check code style with pylint
         run: |
           docker exec web-container pylint app
