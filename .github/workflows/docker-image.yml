@@ -17,7 +17,7 @@ jobs:
         image: docker:19.03.12
         options: --privileged --memory=4g
         ports:
-          - 8000:8000
+          - 8888:8888
 
     steps:
       - name: Checkout code
@@ -40,16 +40,14 @@ jobs:
 
       - name: Run Docker container
         run: |
-          docker run --name web-container -d -p 8000:8000 web
+          docker run --name web-container -d -p 8888:8888 web
 
-      - name: Install dependencies
+      - name: Check code style with pylint
         run: |
-          docker exec web-container pip install --no-cache-dir -r requirements.txt
+          docker exec web-container pylint my_project
 
       - name: Run Django tests
         run: |
           docker exec web-container python manage.py test
 
-      - name: Check code style with pylint
-        run: |
-          docker exec web-container pylint my_project
+
