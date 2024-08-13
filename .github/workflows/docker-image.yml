@@ -15,7 +15,7 @@ jobs:
     services:
       docker:
         image: docker:19.03.12
-        options: --privileged
+        options: --privileged --memory=4g
         ports:
           - 8000:8000
 
@@ -40,7 +40,7 @@ jobs:
 
       - name: Run Docker container
         run: |
-          docker run --name web-container -d -p 8000:8000 web
+          docker run --name web-container -d -p 8888:8888 web
 
       - name: List running containers
         run: |
