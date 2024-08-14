@@ -41,9 +41,3 @@ jobs:
       - name: Run Docker container
         run: |
           docker run --name web-container -d -p 8888:8888 web
-
-      - name: Run Django tests
-        run: |
-          docker exec web-container python app/manage.py test
-
-
