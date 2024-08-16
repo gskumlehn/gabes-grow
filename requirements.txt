@@ -8,6 +8,7 @@ mccabe==0.7.0
 packaging==24.1
 platformdirs==4.2.2
 psycopg==3.2.1
+psycopg-binary==3.2.1
 pylint==3.2.6
 sqlparse==0.5.1
 tomli==2.0.1
