@@ -1,0 +1,17 @@
+<input hidden="true" value="{{ temperature }}" class="js-temperature">
+<input hidden="true" value="{{ humidity }}" class="js-humidity">
+
+<div>
+    Temperature: {{ temperature }}°C
+    <br>
+    Humidity: {{ humidity }}%
+    <br>
+    Soil:
+    {% if dry %}
+    Dry
+    {% else %}
+    Wet
+    {% endif %}
+    <br>
+    at {{ time }}
+</div>
