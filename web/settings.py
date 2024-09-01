@@ -32,6 +32,8 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'apps.dashboard.apps.DashboardConfig',
+    'apps.config.apps.ConfigConfig',
+    'apps.stage.apps.StageConfig',
     'apps.user.apps.UserConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -124,6 +126,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'apps/config/static'),
     os.path.join(BASE_DIR, 'apps/dashboard/static')
 ]
 
