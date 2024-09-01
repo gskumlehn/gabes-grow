@@ -17,10 +17,23 @@ services:
     command: gunicorn web.wsgi:application --bind 0.0.0.0:8888
     volumes:
       - .:/app
+      - static_volume:/app/staticfiles
     ports:
       - "8888:8888"
     depends_on:
       - db
 
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile.nginx
+    ports:
+      - "80:80"
+    volumes:
+      - static_volume:/app/staticfiles
+    depends_on:
+      - web
+
 volumes:
   postgres_data:
+  static_volume:
