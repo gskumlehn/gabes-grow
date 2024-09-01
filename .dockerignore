@@ -1,6 +1,10 @@
 __pycache__
 .dockerignore
 Dockerfile
+Dockerfile.nginx
 docker-compose.yml
-.venv
 .git
+venv
+.idea
+.gitignore
+staticfiles
